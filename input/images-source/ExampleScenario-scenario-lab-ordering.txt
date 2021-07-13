@@ -1,0 +1,25 @@
+@startuml
+
+
+Title Laboratory Ordering Use Case
+
+actor "(GP)" as OrderCreator
+participant "Order Repository" as OrderRepository
+actor "(Lab Operator)" as OrderReciever
+
+    
+    
+    
+    
+
+    OrderCreator-> OrderRepository : Create a new Laboratory Test Order\n[[ExampleScenario-scenario-lab-ordering-resources.html#lab-order-bundle.v0 Bundle for Placed Lab Order]]\n
+
+    OrderRepository-> OrderReciever : Create a new Laboratory Test Order\n[[ExampleScenario-scenario-lab-ordering-resources.html#lab-order-bundle.v0 Bundle for Placed Lab Order]]\n
+
+    OrderReciever-> OrderRepository : Accept Lab Order\n[[ExampleScenario-scenario-lab-ordering-resources.html#lab-order-bundle.v1 Lab Order Bundle Updated Status]]\n
+
+    OrderReciever-> OrderRepository : Update Lab Order with Results\n[[ExampleScenario-scenario-lab-ordering-resources.html#lab-order-bundle.v2 Lab Order Bundle Updated Results]]\n
+
+  
+
+@enduml
