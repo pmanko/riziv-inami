@@ -1,0 +1,132 @@
+{
+  "resourceType": "ExampleScenario",
+  "id": "scenario-lab-ordering",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>url</b>: <code>https://www.hl7belgium.org/fhir/ExampleScenario/scenario-lab-ordering</code></p><p><b>version</b>: 0.1.0</p><p><b>name</b>: LabOrderingScenario</p><p><b>status</b>: draft</p><p><b>experimental</b>: true</p><p><b>date</b>: Jul 13, 2021, 11:00:00 PM</p><p><b>publisher</b>: RIZIV-INAMI</p><p><b>contact</b>: <a href=\"http://somewhere.org\">http://somewhere.org</a></p><p><b>jurisdiction</b>: <span title=\"Codes: {http://unstats.un.org/unsd/methods/m49/m49.htm 056}, {urn:iso:std:iso:3166 BE}\">Belgium (BEL)</span></p><blockquote><p><b>actor</b></p><p><b>actorId</b>: OrderCreator</p><p><b>type</b>: person</p><p><b>name</b>: (GP)</p></blockquote><blockquote><p><b>actor</b></p><p><b>actorId</b>: OrderRepository</p><p><b>type</b>: entity</p><p><b>name</b>: Order Repository</p></blockquote><blockquote><p><b>actor</b></p><p><b>actorId</b>: OrderReciever</p><p><b>type</b>: person</p><p><b>name</b>: (Lab Operator)</p></blockquote><blockquote><p><b>instance</b></p><p><b>resourceId</b>: lab-order-bundle.v0</p><p><b>resourceType</b>: Bundle</p><p><b>name</b>: Bundle for Placed Lab Order</p></blockquote><blockquote><p><b>instance</b></p><p><b>resourceId</b>: EB</p><p><b>resourceType</b>: Bundle</p><p><b>name</b>: Empty Bundle</p></blockquote><blockquote><p><b>instance</b></p><p><b>resourceId</b>: lab-order-bundle.v1</p><p><b>resourceType</b>: Bundle</p><p><b>name</b>: Lab Order Bundle Updated Status</p></blockquote><blockquote><p><b>instance</b></p><p><b>resourceId</b>: lab-order-bundle.v2</p><p><b>resourceType</b>: Bundle</p><p><b>name</b>: Lab Order Bundle Updated Results</p></blockquote><blockquote><p><b>process</b></p><p><b>title</b>: Laboratory Ordering Use Case</p><p><b>description</b>: description</p><p><b>preConditions</b>: The patient visits their GP and shows signs of illness. The GP will order a set of tests to be performed.</p><p><b>postConditions</b>: The patient's lab order is persisted in the Order Repository, and includes an updated status of `Completed` and order results.</p><blockquote><p><b>step</b></p><blockquote><p><b>operation</b></p><p><b>number</b>: 1</p><p><b>name</b>: Create a new Laboratory Test Order</p><p><b>initiator</b>: OrderCreator</p><p><b>receiver</b>: OrderRepository</p><h3>Responses</h3><table class=\"grid\"><tr><td>-</td><td><b>ResourceId</b></td></tr><tr><td>*</td><td>lab-order-bundle.v0</td></tr></table></blockquote></blockquote><blockquote><p><b>step</b></p><blockquote><p><b>operation</b></p><p><b>number</b>: 2</p><p><b>name</b>: Create a new Laboratory Test Order</p><p><b>initiator</b>: OrderRepository</p><p><b>receiver</b>: OrderReciever</p><h3>Responses</h3><table class=\"grid\"><tr><td>-</td><td><b>ResourceId</b></td></tr><tr><td>*</td><td>lab-order-bundle.v0</td></tr></table></blockquote></blockquote><blockquote><p><b>step</b></p><blockquote><p><b>operation</b></p><p><b>number</b>: 3</p><p><b>name</b>: Accept Lab Order</p><p><b>initiator</b>: OrderReciever</p><p><b>receiver</b>: OrderRepository</p><h3>Responses</h3><table class=\"grid\"><tr><td>-</td><td><b>ResourceId</b></td></tr><tr><td>*</td><td>lab-order-bundle.v1</td></tr></table></blockquote></blockquote><blockquote><p><b>step</b></p><blockquote><p><b>operation</b></p><p><b>number</b>: 3</p><p><b>name</b>: Update Lab Order with Results</p><p><b>initiator</b>: OrderReciever</p><p><b>receiver</b>: OrderRepository</p><h3>Responses</h3><table class=\"grid\"><tr><td>-</td><td><b>ResourceId</b></td></tr><tr><td>*</td><td>lab-order-bundle.v2</td></tr></table></blockquote></blockquote></blockquote></div>"
+  },
+  "url": "https://www.hl7belgium.org/fhir/ExampleScenario/scenario-lab-ordering",
+  "version": "0.1.0",
+  "name": "LabOrderingScenario",
+  "status": "draft",
+  "experimental": true,
+  "date": "2021-07-14T00:00:00.000+01:00",
+  "publisher": "RIZIV-INAMI",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://somewhere.org"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code": "056"
+        },
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "BE"
+        }
+      ]
+    }
+  ],
+  "actor": [
+    {
+      "actorId": "OrderCreator",
+      "type": "person",
+      "name": "(GP)"
+    },
+    {
+      "actorId": "OrderRepository",
+      "type": "entity",
+      "name": "Order Repository"
+    },
+    {
+      "actorId": "OrderReciever",
+      "type": "person",
+      "name": "(Lab Operator)"
+    }
+  ],
+  "instance": [
+    {
+      "resourceId": "lab-order-bundle.v0",
+      "resourceType": "Bundle",
+      "name": "Bundle for Placed Lab Order"
+    },
+    {
+      "resourceId": "EB",
+      "resourceType": "Bundle",
+      "name": "Empty Bundle"
+    },
+    {
+      "resourceId": "lab-order-bundle.v1",
+      "resourceType": "Bundle",
+      "name": "Lab Order Bundle Updated Status"
+    },
+    {
+      "resourceId": "lab-order-bundle.v2",
+      "resourceType": "Bundle",
+      "name": "Lab Order Bundle Updated Results"
+    }
+  ],
+  "process": [
+    {
+      "title": "Laboratory Ordering Use Case",
+      "description": "description",
+      "preConditions": "The patient visits their GP and shows signs of illness. The GP will order a set of tests to be performed.",
+      "postConditions": "The patient's lab order is persisted in the Order Repository, and includes an updated status of `Completed` and order results.",
+      "step": [
+        {
+          "operation": {
+            "number": "1",
+            "name": "Create a new Laboratory Test Order",
+            "initiator": "OrderCreator",
+            "receiver": "OrderRepository",
+            "response": {
+              "resourceId": "lab-order-bundle.v0"
+            }
+          }
+        },
+        {
+          "operation": {
+            "number": "2",
+            "name": "Create a new Laboratory Test Order",
+            "initiator": "OrderRepository",
+            "receiver": "OrderReciever",
+            "response": {
+              "resourceId": "lab-order-bundle.v0"
+            }
+          }
+        },
+        {
+          "operation": {
+            "number": "3",
+            "name": "Accept Lab Order",
+            "initiator": "OrderReciever",
+            "receiver": "OrderRepository",
+            "response": {
+              "resourceId": "lab-order-bundle.v1"
+            }
+          }
+        },
+        {
+          "operation": {
+            "number": "3",
+            "name": "Update Lab Order with Results",
+            "initiator": "OrderReciever",
+            "receiver": "OrderRepository",
+            "response": {
+              "resourceId": "lab-order-bundle.v2"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
