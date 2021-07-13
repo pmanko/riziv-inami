@@ -93,7 +93,7 @@
     <step>
       <operation>
         <name value="Update Lab Order with Results"/>
-        <number value="3"/>
+        <number value="4"/>
         <initiator value="OrderReciever"/>
         <receiver value="OrderRepository"/>
         <response>
@@ -101,6 +101,19 @@
         </response>
       </operation>
     </step>
+
+    <step>
+      <operation>
+        <name value="Update Lab Order with Results"/>
+        <number value="5"/>
+        <initiator value="OrderRepository"/>
+        <receiver value="OrderCreator"/>
+        <response>
+          <resourceId value="lab-order-bundle.v2"/>
+        </response>
+      </operation>
+    </step>
+
 
   </process>
 </ExampleScenario>

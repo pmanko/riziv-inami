@@ -20,6 +20,9 @@ actor "(Lab Operator)" as OrderReciever
 
     OrderReciever-> OrderRepository : Update Lab Order with Results\n[[ExampleScenario-scenario-lab-ordering-resources.html#lab-order-bundle.v2 Lab Order Bundle Updated Results]]\n
 
+    OrderRepository-> OrderCreator : Update Lab Order with Results\n[[ExampleScenario-scenario-lab-ordering-resources.html#lab-order-bundle.v2 Lab Order Bundle Updated Results]]\n
+
+
   
 
 @enduml
